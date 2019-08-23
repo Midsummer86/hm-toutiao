@@ -4,7 +4,6 @@ import Login from '@/views/login'
 Vue.use(VueRouter)
 var router = new VueRouter({
   routes: [
-    { path: '/', redirect: '/lg' },
     { path: '/lg', name: 'login', component: Login }
   ]
 })
