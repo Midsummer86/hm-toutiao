@@ -4,7 +4,9 @@ import Login from '@/views/login'
 import Home from '@/views/home'
 import Welcome from '@/views/welcome'
 import NotFound from '@/views/404'
+import Article from '@/views/article'
 import store from '@/store'
+import component from '@/views/component'
 Vue.use(VueRouter)
 var router = new VueRouter({
   routes: [
@@ -13,7 +15,10 @@ var router = new VueRouter({
     { path: '/',
       component: Home,
       children: [
-        { path: '/', name: 'welcome', component: Welcome }
+        { path: '/', name: 'welcome', component: Welcome },
+        { path: '/article', name: 'article', component: Article },
+        { path: '/component', name: 'com', component: component }
+
       ]
     },
     { path: '*', name: 404, component: NotFound }

@@ -5,11 +5,11 @@
             <div class="logo" :class="{miniLogo:isCollapse}"></div>
             <!-- 导航菜单 -->
             <el-menu
-                default-active="/"
+                :default-active="$route.path"
                 class="el-menu-vertical-demo"
                 background-color="#002033"
                 text-color="#fff"
-                active-text-color="keyblue"
+                active-text-color="yellow"
                 :collapse="isCollapse"
                 :collapse-transition="false"
                 router
@@ -93,12 +93,25 @@ export default {
       this.$router.push('/setting')
     },
     logout () {
-      if (confirm('确定要退出吗')) {
+      this.$confirm('确定要退出吗', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
         // 1. 删除本地的用户信息
         store.delUser()
         // 2. 跳转到登录
         this.$router.push('/login')
-      }
+        this.$message({
+          type: 'success',
+          message: '已退出登入!'
+        })
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消退出'
+        })
+      })
     }
   }
 }
