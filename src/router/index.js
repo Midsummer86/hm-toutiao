@@ -7,7 +7,8 @@ import NotFound from '@/views/404'
 import Article from '@/views/article'
 import store from '@/store'
 import Images from '@/views/images'
-import component from '@/views/component'
+import Component from '@/views/component'
+import Publish from '@/views/publish'
 Vue.use(VueRouter)
 var router = new VueRouter({
   routes: [
@@ -18,8 +19,9 @@ var router = new VueRouter({
       children: [
         { path: '/', name: 'welcome', component: Welcome },
         { path: '/article', name: 'article', component: Article },
-        { path: '/component', name: 'com', component: component },
-        { path: '/images', name: 'images', component: Images }
+        { path: '/component', name: 'com', component: Component },
+        { path: '/images', name: 'images', component: Images },
+        { path: '/publish', name: 'publish', component: Publish }
       ]
     },
     { path: '*', name: 404, component: NotFound }
