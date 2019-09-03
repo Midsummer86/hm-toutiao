@@ -10,6 +10,7 @@ import Images from '@/views/images'
 import Component from '@/views/component'
 import Publish from '@/views/publish'
 import Comment from '@/views/comment'
+import Setting from '@/views/setting'
 Vue.use(VueRouter)
 var router = new VueRouter({
   routes: [
@@ -23,7 +24,8 @@ var router = new VueRouter({
         { path: '/component', name: 'com', component: Component },
         { path: '/images', name: 'images', component: Images },
         { path: '/publish', name: 'publish', component: Publish },
-        { path: '/comment', name: 'comment', component: Comment }
+        { path: '/comment', name: 'comment', component: Comment },
+        { path: '/setting', name: 'setting', component: Setting }
       ]
     },
     { path: '*', name: 404, component: NotFound }
